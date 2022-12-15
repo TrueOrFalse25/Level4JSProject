@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays</title>
+    <style>
+        body {
+            font:bold 18pt calibri;
+        }
+    </style>
+    <script>
+        function initialize() {
+            arrayOutput = document.getElementById("divout");
+            //theList = ["1st Item", "2nd Item", "3rd Item", "4th Item", "5th Item"];
+
+            //theList[2] = "Not the 2nd Item";
+            // theList[5] = "6th Item";
+            // arrayOutput.innerHTML = theList[2];
+            // arrayOutput.innerHTML = theList;
+            randomList = [];
+            var randomLength = getRandomInteger(50,100);
+            for (var i = 0; i < randomLength; i++) {
+                randomList[randomList.length] = getRandomInteger(-10, 10);
+            }
+            displayList();
+        }
+        
+        function displayList() {
+            arrayOutput.innerHTML = "";
+            for (var i = 0; i < randomList.length; i++) {
+                arrayOutput.innerHTML += i + ": " + randomList[i] + "<br />";
+            }
+        }
+    </script>
+</head>
+<body onload = "initialize();">
+    <div id = "divout"></div>
+</body>
+</html>
