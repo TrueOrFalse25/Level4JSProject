@@ -25,13 +25,11 @@
 "Please...I have children.", "Please let me go."];
         function splat(bugNum) {
             if (splatted === false) {
-
                 document.getElementById("bug" + bugNum).src = "splat.PNG";
                 document.getElementById("bug" + bugNum).style.pointerEvents = "none";
                 gettingSplat();
                 if (splatCount === 15) {
                     document.getElementById("comments").innerHTML = "That's it. Now Mamma's angry!";
-
                     for (let i = 1; i <= 15; i++) {
                         if (i != 8) {
                             document.getElementById("bug" + i).src = "white.png";
