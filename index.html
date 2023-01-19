@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bug Splat</title>
+    <style>
+        .bugs {
+            display: grid;
+            grid-template-columns: repeat(3, 5fr);
+            width: 750px;
+            height: auto;
+        }
+    </style>
+    <script>
+        var splatted = false;
+        var splatCount = 0;
+        var defiantComments = ["I'm gonna splat you next!", "You think you're so tough, huh?!",
+    "I'm gonna get you!", "Run while you still can!", "Your life is in danger if you don't stop...",
+"I'll destroy you!", "Your food and blood are mine!", "You're all gonna feel my wrath!", "Just wait till the swarm comes!"];
+        var pleadingComments = ["Please spare me!", "Please stop; I'll give you anything you want!",
+    "I'm very hurt...please don't hurt me!", "Please, I just want to survive!",
+"I'm begging you to leave us alone!", "I'm hungry and tired...please go to the next bug!", "I don't want to die this young, please.",
+"Please...I have children.", "Please let me go."];
+        function splat(bugNum) {
+            if (splatted == false) {
+                if (bugNum == 1) {
+                    document.getElementById("bug1").src = "splat.PNG";
+                    gettingSplat();
+                }
+                if (bugNum == 2) {
+                    document.getElementById("bug2").src = "splat.PNG";
+                    gettingSplat();
+                }
+                if (bugNum == 3) {
+                    document.getElementById("bug3").src = "splat.PNG";
+                    gettingSplat();
+                }
+                if (bugNum == 4) {
+                    document.getElementById("bug4").src = "splat.PNG";
+                    gettingSplat();
+                }
+                if (bugNum == 5) {
+                    document.getElementById("bug5").src = "splat.PNG";
+                    gettingSplat();
+                }
+                if (bugNum == 6) {
+                    document.getElementById("bug6").src = "splat.PNG";
+                    gettingSplat();
+                }
+                if (bugNum == 7) {
+                    document.getElementById("bug7").src = "splat.PNG";
+                    gettingSplat();
+                }
+                if (bugNum == 8) {
+                    document.getElementById("bug8").src = "splat.PNG";
+                    gettingSplat();
+                }
+                if (bugNum == 9) {
+                    document.getElementById("bug9").src = "splat.PNG";
+                    gettingSplat();
+                }
+                if (bugNum == 10) {
+                    document.getElementById("bug10").src = "splat.PNG";
+                    gettingSplat();
+                }
+                if (bugNum == 11) {
+                    document.getElementById("bug11").src = "splat.PNG";
+                    gettingSplat();
+                }
+                if (bugNum == 12) {
+                    document.getElementById("bug12").src = "splat.PNG";
+                    gettingSplat();
+                }
+                if (bugNum == 13) {
+                    document.getElementById("bug13").src = "splat.PNG";
+                    gettingSplat();
+                }
+                if (bugNum == 14) {
+                    document.getElementById("bug14").src = "splat.PNG";
+                    gettingSplat();
+                }
+                if (bugNum == 15) {
+                    document.getElementById("bug15").src = "splat.PNG";
+                    gettingSplat();
+                }
+                if (splatCount == 15) {
+                    document.getElementById("comments").innerHTML = "That's it. Now Mamma's angry!";
+                    document.getElementById("bug1").src = "white.png";
+                    document.getElementById("bug2").src = "white.png";
+                    document.getElementById("bug3").src = "white.png";
+                    document.getElementById("bug4").src = "white.png";
+                    document.getElementById("bug5").src = "white.png";
+                    document.getElementById("bug6").src = "white.png";
+                    document.getElementById("bug7").src = "white.png";
+                    document.getElementById("bug8").src = "mamma.jpg";
+                    document.getElementById("bug9").src = "white.png";
+                    document.getElementById("bug10").src = "white.png";
+                    document.getElementById("bug11").src = "white.png";
+                    document.getElementById("bug12").src = "white.png";
+                    document.getElementById("bug13").src = "white.png";
+                    document.getElementById("bug14").src = "white.png";
+                    document.getElementById("bug15").src = "white.png";
+                }
+            }
+        }
+        function getRandomInteger(lower, upper) {
+            var multiplier = upper - (lower - 1);
+            var random = parseInt(Math.random() * multiplier) + lower;
+            return random;
+        }
+        function comment() {
+            var random1 = getRandomInteger(1, defiantComments.length);
+            if (splatCount <= 7) {
+                document.getElementById("comments").innerHTML = defiantComments[random1];
+                defiantComments.splice(random1, 1);
+            }
+            var random2 = getRandomInteger(1, pleadingComments.length);
+            if (splatCount >= 8) {
+                document.getElementById("comments").innerHTML = pleadingComments[random2];
+                pleadingComments.splice(random2, 1);
+            }
+        }
+        function gettingSplat() {
+            splatted == true;
+            splatCount++;
+            comment();
+        }
+    </script>
+</head>
+<body>
+    <h1>Bug Splat</h1>
+    <h2 id = "comments">Comments: </h2>
+    <div class="bugs">
+        <img id = "bug1" onclick = "splat(1)" src = "bug1.png">
+        <img id = "bug2" onclick = "splat(2)" src = "bug2.png">
+        <img id = "bug3" onclick = "splat(3)" src = "bug3.png">
+        <img id = "bug4" onclick = "splat(4)" src = "bug4.png">
+        <img id = "bug5" onclick = "splat(5)" src = "bug5.png">
+        <img id = "bug6" onclick = "splat(6)" src = "bug6.png">
+        <img id = "bug7" onclick = "splat(7)" src = "bug7.png">
+        <img id = "bug8" onclick = "splat(8)" src = "bug8.png">
+        <img id = "bug9" onclick = "splat(9)" src = "bug9.png">
+        <img id = "bug10" onclick = "splat(10)" src = "bug10.png">
+        <img id = "bug11" onclick = "splat(11)" src = "bug11.png">
+        <img id = "bug12" onclick = "splat(12)" src = "bug12.png">
+        <img id = "bug13" onclick = "splat(13)" src = "bug13.png">
+        <img id = "bug14" onclick = "splat(14)" src = "bug14.png">
+        <img id = "bug15" onclick = "splat(15)" src = "bug15.png">
+    </div>
+</body>
+</html>
