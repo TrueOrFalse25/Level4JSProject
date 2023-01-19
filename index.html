@@ -24,84 +24,20 @@
 "I'm begging you to leave us alone!", "I'm hungry and tired...please go to the next bug!", "I don't want to die this young, please.",
 "Please...I have children.", "Please let me go."];
         function splat(bugNum) {
-            if (splatted == false) {
-                if (bugNum == 1) {
-                    document.getElementById("bug1").src = "splat.PNG";
-                    gettingSplat();
-                }
-                if (bugNum == 2) {
-                    document.getElementById("bug2").src = "splat.PNG";
-                    gettingSplat();
-                }
-                if (bugNum == 3) {
-                    document.getElementById("bug3").src = "splat.PNG";
-                    gettingSplat();
-                }
-                if (bugNum == 4) {
-                    document.getElementById("bug4").src = "splat.PNG";
-                    gettingSplat();
-                }
-                if (bugNum == 5) {
-                    document.getElementById("bug5").src = "splat.PNG";
-                    gettingSplat();
-                }
-                if (bugNum == 6) {
-                    document.getElementById("bug6").src = "splat.PNG";
-                    gettingSplat();
-                }
-                if (bugNum == 7) {
-                    document.getElementById("bug7").src = "splat.PNG";
-                    gettingSplat();
-                }
-                if (bugNum == 8) {
-                    document.getElementById("bug8").src = "splat.PNG";
-                    gettingSplat();
-                }
-                if (bugNum == 9) {
-                    document.getElementById("bug9").src = "splat.PNG";
-                    gettingSplat();
-                }
-                if (bugNum == 10) {
-                    document.getElementById("bug10").src = "splat.PNG";
-                    gettingSplat();
-                }
-                if (bugNum == 11) {
-                    document.getElementById("bug11").src = "splat.PNG";
-                    gettingSplat();
-                }
-                if (bugNum == 12) {
-                    document.getElementById("bug12").src = "splat.PNG";
-                    gettingSplat();
-                }
-                if (bugNum == 13) {
-                    document.getElementById("bug13").src = "splat.PNG";
-                    gettingSplat();
-                }
-                if (bugNum == 14) {
-                    document.getElementById("bug14").src = "splat.PNG";
-                    gettingSplat();
-                }
-                if (bugNum == 15) {
-                    document.getElementById("bug15").src = "splat.PNG";
-                    gettingSplat();
-                }
-                if (splatCount == 15) {
+            if (splatted === false) {
+
+                document.getElementById("bug" + bugNum).src = "splat.PNG";
+                document.getElementById("bug" + bugNum).style.pointerEvents = "none";
+                gettingSplat();
+                if (splatCount === 15) {
                     document.getElementById("comments").innerHTML = "That's it. Now Mamma's angry!";
-                    document.getElementById("bug1").src = "white.png";
-                    document.getElementById("bug2").src = "white.png";
-                    document.getElementById("bug3").src = "white.png";
-                    document.getElementById("bug4").src = "white.png";
-                    document.getElementById("bug5").src = "white.png";
-                    document.getElementById("bug6").src = "white.png";
-                    document.getElementById("bug7").src = "white.png";
+
+                    for (let i = 1; i <= 15; i++) {
+                        if (i != 8) {
+                            document.getElementById("bug" + i).src = "white.png";
+                        }
+                    }
                     document.getElementById("bug8").src = "mamma.jpg";
-                    document.getElementById("bug9").src = "white.png";
-                    document.getElementById("bug10").src = "white.png";
-                    document.getElementById("bug11").src = "white.png";
-                    document.getElementById("bug12").src = "white.png";
-                    document.getElementById("bug13").src = "white.png";
-                    document.getElementById("bug14").src = "white.png";
-                    document.getElementById("bug15").src = "white.png";
                 }
             }
         }
@@ -111,19 +47,20 @@
             return random;
         }
         function comment() {
-            var random1 = getRandomInteger(1, defiantComments.length);
+            var random1 = getRandomInteger(0, defiantComments.length - 1);
             if (splatCount <= 7) {
                 document.getElementById("comments").innerHTML = defiantComments[random1];
+               
                 defiantComments.splice(random1, 1);
             }
-            var random2 = getRandomInteger(1, pleadingComments.length);
-            if (splatCount >= 8) {
+            var random2 = getRandomInteger(0, pleadingComments.length - 1);
+            if (splatCount > 7) {
                 document.getElementById("comments").innerHTML = pleadingComments[random2];
                 pleadingComments.splice(random2, 1);
             }
         }
         function gettingSplat() {
-            splatted == true;
+            splatted === true;
             splatCount++;
             comment();
         }
